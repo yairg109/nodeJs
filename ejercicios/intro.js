@@ -6,9 +6,15 @@ const alumnos = {
   Yair: [2, 1, 3, 3],
 };
 
-let alumno = process.argv[2]
+let alumno = process.argv[2];
 
-let array = alumnos[alumno]
-
-console.log(array)
-
+if (!alumnos.hasOwnProperty(alumno)) {
+  console.log("Alumno no encontrado");
+} else {
+  let acum = 0;
+  alumnos[alumno].forEach(element => {
+    acum += element;
+    //acum = acum + c
+  });
+  console.log(`la suma es ${acum} y el promedio es ${acum/alumnos[alumno].length}`);
+}
